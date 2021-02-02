@@ -14,8 +14,8 @@ const webStats = path.join(buildPath,'loadable-stats.json');
 
 module.exports = {
   getExtractors: () => {
-    const nodeExtractor = new ChunkExtractor({ statsFile: nodeStats });
-    const webExtractor = new ChunkExtractor({ statsFile: webStats });
+    const nodeExtractor = new ChunkExtractor({ statsFile: nodeStats, outputPath: path.resolve('build/node') });
+    const webExtractor = new ChunkExtractor({ statsFile: webStats, outputPath: path.resolve('build') });
     return { nodeExtractor, webExtractor };
   },
 };
